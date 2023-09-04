@@ -1,4 +1,4 @@
-public class SimpleTask extends Task{
+public class SimpleTask extends Task {
     private String title;
 
     public SimpleTask(int id, String title) {

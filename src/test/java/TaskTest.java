@@ -7,38 +7,38 @@ class TaskTest {
     public void simpleTaskMatchesTest() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        boolean actual = simpleTask.matches( "Позвонить");
+        boolean actual = simpleTask.matches("Позвонить");
         boolean expected = true;
-        Assertions.assertEquals  (expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void simpleTaskNotMatchesTest() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        boolean actual = simpleTask.matches( "Написать");
+        boolean actual = simpleTask.matches("Написать");
         boolean expected = true;
-        Assertions.assertFalse  (actual);
+        Assertions.assertFalse(actual);
     }
 
     @Test
     public void EpicMatchesTest() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
-        boolean actual = epic.matches( "Хлеб");
+        boolean actual = epic.matches("Хлеб");
         boolean expected = true;
-        Assertions.assertTrue (actual);
+        Assertions.assertTrue(actual);
     }
 
     @Test
     public void EpicNotMatchesTest() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
-        boolean actual = epic.matches( "Яблоки");
+        boolean actual = epic.matches("Яблоки");
         boolean expected = false;
-        Assertions.assertFalse (actual);
+        Assertions.assertFalse(actual);
     }
 
     @Test
@@ -49,9 +49,9 @@ class TaskTest {
                 "Приложение НетоБанка",
                 "Во вторник после обеда"
         );
-        boolean actual = meeting.matches( "приложения");
+        boolean actual = meeting.matches("приложения");
         boolean expected = true;
-        Assertions.assertTrue (actual);
+        Assertions.assertTrue(actual);
 
     }
 
@@ -63,9 +63,9 @@ class TaskTest {
                 "Приложение НетоБанка",
                 "Во вторник после обеда"
         );
-        boolean actual = meeting.matches( "Приложение");
+        boolean actual = meeting.matches("Приложение");
         boolean expected = true;
-        Assertions.assertTrue (actual);
+        Assertions.assertTrue(actual);
 
     }
 
@@ -77,9 +77,9 @@ class TaskTest {
                 "Приложение НетоБанка",
                 "Во вторник после обеда"
         );
-        boolean actual = meeting.matches( "Релиз");
+        boolean actual = meeting.matches("Релиз");
         boolean expected = false;
-        Assertions.assertFalse (actual);
+        Assertions.assertFalse(actual);
 
     }
 }
